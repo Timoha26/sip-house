@@ -4,9 +4,9 @@
 <svg
    version="1.1"
    id="svg1"
-   width="190.66701"
-   height="69.667"
-   viewBox="0 0 190.66702 69.66701"
+   width="60"
+   height="60"
+   viewBox="0 0 60.000004 60.000009"
    sodipodi:docname="siphouse-logo.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -45,7 +45,8 @@
   <g
      inkscape:groupmode="layer"
      inkscape:label="Image"
-     id="g1">
+     id="g1"
+     transform="matrix(0.89135873,0,0,0.89136672,-1.1962941,-1.3981212)">
     <image
        width="50"
        height="50"
@@ -60,23 +61,5 @@
        cx="34.998585"
        cy="35.224384"
        r="32.966412" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="1" />
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="text"
-     transform="translate(2.9353654,8.5802988)">
-    <text
-       xml:space="preserve"
-       id="text1"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.9417px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect1);display:inline;fill:#000000"
-       transform="matrix(1.3418927,0,0,1.2083597,-76.987881,-18.107138)"><tspan
-         x="109.96289"
-         y="44.378954"
-         id="tspan1">СИПдом</tspan></text>
   </g>
 </svg>

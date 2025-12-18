@@ -1,2 +1,54 @@
+<header class="border-bottom sticky-top bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#hero">
+        <img src="assets/siphouse-logo.svg" alt="СИП-дом" class="me-2" style="height: 40px;">
+        <span class="fw-bold">СИП-дом</span>
+      </a>
 
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+              aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Проекты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#steps">Этапы строительства</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#advantages">Преимущества</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacts">Контакты</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">О нас</a>
+          </li>
+        </ul>
+
+        <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-2">
+          <div class="text-end me-lg-3">
+            <div class="fw-semibold">+7 (900) 000‑00‑00</div>
+            <small class="text-muted">Ежедневно с 9:00 до 20:00</small>
+          </div>
+          <a href="#contacts" class="btn btn-primary px-4">Заказать консультацию</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
 <router-outlet></router-outlet>
+<footer class="border-top py-4 bg-light">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+    <div class="small text-muted">
+      © {{ fullYear }} «СИП‑дом». Строительство домов из СИП‑панелей.
+    </div>
+    <div class="small text-muted">
+      ИНН 0000000000 · ОГРН 0000000000000
+    </div>
+  </div>
+</footer>

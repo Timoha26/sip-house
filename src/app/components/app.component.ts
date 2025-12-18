@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'СИПдом';
+
+  fullYear: number = 0;
+
+  ngOnInit() {
+    this.fullYear = new Date().getFullYear();
+  }
 }
