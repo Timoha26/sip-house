@@ -30,7 +30,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.SSH_PASSWORD }}
           script: |
             pwd
             rsync -avz --delete /dist/sip-house-app/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/www/xn--42-vlceyfhfck.xn--p1ai/
