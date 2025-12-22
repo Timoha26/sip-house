@@ -21,9 +21,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
-        env:
-          NODE_ENV: production
+        run: ng build
 
       - name: Deploy to server
         uses: appleboy/ssh-action@master
@@ -32,5 +30,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ${{ secrets.REMOTE_PATH }}
-            rsync -avz --delete . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:dist/sip-house-app/
+            cd dist/sip-house-app
+            rsync -avz --delete . ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH }}
