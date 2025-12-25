@@ -11,7 +11,6 @@ import {HttpClientModule} from "@angular/common/http";
 import {registerLocaleData} from "@angular/common";
 import localeRu from "@angular/common/locales/ru";
 import {ProjectsDetailsComponent} from "./components/projects/projects.details.component";
-import {PdfViewerModule} from "ng2-pdf-viewer";
 
 registerLocaleData(localeRu)
 
@@ -26,8 +25,7 @@ registerLocaleData(localeRu)
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule,
-    PdfViewerModule
+    HttpClientModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'ru-RU'},
