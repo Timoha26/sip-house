@@ -1,0 +1,22 @@
+# reg.ru for sipstroy42 [xn--42-vlceyfhfck.xn--p1ai]
+
+login sipstroy42@yandex.ru
+pass  3aqBinV_
+
+server227.hosting.reg.ru 31.31.197.13
+
+# ssh,sftp
+login u3363751
+pass  j3Rj5BO1tITQ6O5n
+manage panel https://server277.hosting.reg.ru:1500/
+
+# ftp
+login u3363751
+pass  nM06As2cWPLE0Wfo
+IP    31.31.197.13
+
+# mySQL
+login u3363751_default
+pass  iCQY7k5cGY14RfgN
+defDB u3363751_default
+host  localhost

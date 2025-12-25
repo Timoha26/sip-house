@@ -1,0 +1,28 @@
+<section id="projects" class="py-5">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+      <div>
+        <h2 class="fw-bold mb-2">Проекты</h2>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let item of projects">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <img src="{{item.images[0]}}"/>
+            <h5 class="card-title fw-semibold">{{ item.name }}</h5>
+            <p class="card-text small mb-2 text-muted">{{ item.description }}</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div>
+                <div class="fw-bold text-success">от {{ item.price | currency }}</div>
+                <small class="text-muted">{{ item.priceDescription }}</small>
+              </div>
+              <button class="btn btn-outline-success btn-sm" routerLink="{{item.id}}">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

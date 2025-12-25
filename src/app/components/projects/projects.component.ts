@@ -1,12 +1,14 @@
 import {Component} from "@angular/core";
-import {ProjectsService} from "../../services/projects.service";
 import {ProjectModel} from "../../models/project.model";
+import {ProjectsService} from "../../services/projects.service";
 
 @Component({
-  templateUrl: 'home.component.html'
+  templateUrl: 'projects.component.html'
 })
-export class HomeComponent {
+export class ProjectsComponent {
+  id: string | undefined;
   projects: ProjectModel[] = [];
+
 
   constructor(private projectsService: ProjectsService) {
   }

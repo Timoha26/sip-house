@@ -1,0 +1,13 @@
+<section id="projects" class="py-5">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4" *ngIf="project">
+      <div>
+        <h2 class="fw-bold mb-2">{{project.name}}</h2>
+      </div>
+    </div>
+
+    <div class="row g-4" *ngIf="project">
+      <pdf-viewer [src]="project.pdfFile" [render-text]="false" [original-size]="false"></pdf-viewer>
+    </div>
+  </div>
+</section>

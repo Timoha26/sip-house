@@ -5,15 +5,15 @@
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold mb-3">
           Дома из СИП‑панелей
-          <span class="d-block text-primary">под ключ в кратчайшие сроки</span>
+          <span class="d-block text-success">под ключ в кратчайшие сроки</span>
         </h1>
         <p class="lead mb-4">
           Проектирование, производство и строительство энергоэффективных домов из СИП‑панелей
           в вашем регионе с гарантией качества и фиксированной сметой.
         </p>
         <div class="d-flex flex-column flex-sm-row gap-3">
-          <a href="#projects" class="btn btn-primary btn-lg px-4">Подобрать проект</a>
-          <a href="#advantages" class="btn btn-outline-primary btn-lg px-4">Почему СИП‑дом?</a>
+          <a href="#projects" class="btn btn-success btn-lg px-4">Подобрать проект</a>
+          <a href="#advantages" class="btn btn-outline-success btn-lg px-4">Почему СИП‑дом?</a>
         </div>
         <div class="d-flex flex-wrap gap-3 mt-4 small text-muted">
           <div class="d-flex align-items-center gap-2">
@@ -28,7 +28,7 @@
       </div>
       <div class="col-lg-6">
         <div class="card border-0 shadow-lg">
-          <div class="ratio ratio-4x3 rounded-top" style="background:url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg') center/cover no-repeat;">
+          <div class="ratio ratio-4x3 rounded-top" style="background:url('') center/cover no-repeat;">
             <img src="assets/avangard_project_42_with3d.png"/>
           </div>
           <div class="card-body">
@@ -52,59 +52,22 @@
         <h2 class="fw-bold mb-2">Проекты</h2>
         <p class="text-muted mb-0">Готовые решения, которые можно адаптировать под ваши задачи.</p>
       </div>
-      <a href="#" class="btn btn-outline-primary mt-3 mt-md-0">Смотреть все проекты</a>
+      <a href="#" class="btn btn-outline-success mt-3 mt-md-0" routerLink="projects">Смотреть все проекты</a>
     </div>
 
     <div class="row g-4">
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-4" *ngFor="let project of projects">
         <div class="card h-100 shadow-sm border-0">
-          <div class="ratio ratio-4x3 rounded-top" style="background:url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg') center/cover no-repeat;"></div>
           <div class="card-body d-flex flex-column">
-            <img src="assets/noname_house_2_level_3d.png" />
-            <h5 class="card-title fw-semibold">Проект 2K</h5>
-            <p class="card-text small mb-2 text-muted">Площадь 120 м² · 2 этажа · терраса</p>
+            <img src="{{project.images[0]}}"/>
+            <h5 class="card-title fw-semibold">{{ project.name }}</h5>
+            <p class="card-text small mb-2 text-muted">{{ project.description }}</p>
             <div class="mt-auto d-flex justify-content-between align-items-center">
               <div>
-                <div class="fw-bold text-primary">от 4 500 000 ₽</div>
-                <small class="text-muted">с фундаментом и отделкой</small>
+                <div class="fw-bold text-success">от {{ project.price | currency }}</div>
+                <small class="text-muted">{{ project.priceDescription }}</small>
               </div>
-              <button class="btn btn-outline-primary btn-sm">Подробнее</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="ratio ratio-4x3 rounded-top" style="background:url('https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg') center/cover no-repeat;"></div>
-          <div class="card-body d-flex flex-column">
-            <img src="assets/avangard_project_42_with3d.png" />
-            <h5 class="card-title fw-semibold">Проект 1K</h5>
-            <p class="card-text small mb-2 text-muted">Площадь 95 м² · 1 этаж · 3 спальни</p>
-            <div class="mt-auto d-flex justify-content-between align-items-center">
-              <div>
-                <div class="fw-bold text-primary">от 3 200 000 ₽</div>
-                <small class="text-muted">под чистовую отделку</small>
-              </div>
-              <button class="btn btn-outline-primary btn-sm">Подробнее</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="ratio ratio-4x3 rounded-top" style="background:url('https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg') center/cover no-repeat;"></div>
-          <div class="card-body d-flex flex-column">
-            <img src="assets/avangard_house_1-level_3d.png" />
-            <h5 class="card-title fw-semibold">Проект 0.5K</h5>
-            <p class="card-text small mb-2 text-muted">Площадь 70 м² · 1 этаж · для дачи</p>
-            <div class="mt-auto d-flex justify-content-between align-items-center">
-              <div>
-                <div class="fw-bold text-primary">от 2 400 000 ₽</div>
-                <small class="text-muted">эконом‑решение</small>
-              </div>
-              <button class="btn btn-outline-primary btn-sm">Подробнее</button>
+              <button class="btn btn-outline-success btn-sm" routerLink="projects/{{project.id}}">Подробнее</button>
             </div>
           </div>
         </div>
@@ -177,28 +140,28 @@
     <div class="row g-4">
       <div class="col-md-6 col-lg-3">
         <div class="h-100 bg-white border rounded-3 p-3 p-lg-4 shadow-sm">
-          <div class="badge bg-primary rounded-circle mb-3 px-3 py-2">1</div>
+          <div class="badge bg-success rounded-circle mb-3 px-3 py-2">1</div>
           <h6 class="fw-semibold mb-2">Консультация и подбор проекта</h6>
           <p class="small mb-0">Обсуждаем ваши задачи, бюджет и сроки, предлагаем оптимальные варианты проектов.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="h-100 bg-white border rounded-3 p-3 p-lg-4 shadow-sm">
-          <div class="badge bg-primary rounded-circle mb-3 px-3 py-2">2</div>
+          <div class="badge bg-success rounded-circle mb-3 px-3 py-2">2</div>
           <h6 class="fw-semibold mb-2">Проектирование и договор</h6>
           <p class="small mb-0">Готовим архитектурный и конструкторский раздел, фиксируем стоимость в договоре.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="h-100 bg-white border rounded-3 p-3 p-lg-4 shadow-sm">
-          <div class="badge bg-primary rounded-circle mb-3 px-3 py-2">3</div>
+          <div class="badge bg-success rounded-circle mb-3 px-3 py-2">3</div>
           <h6 class="fw-semibold mb-2">Фундамент и сборка дома</h6>
           <p class="small mb-0">Устраиваем фундамент и собираем коробку дома из СИП‑панелей под контролем инженера.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-3">
         <div class="h-100 bg-white border rounded-3 p-3 p-lg-4 shadow-sm">
-          <div class="badge bg-primary rounded-circle mb-3 px-3 py-2">4</div>
+          <div class="badge bg-success rounded-circle mb-3 px-3 py-2">4</div>
           <h6 class="fw-semibold mb-2">Инженерия и отделка</h6>
           <p class="small mb-0">Проводим коммуникации, выполняем отделочные работы и сдаём дом «под ключ».</p>
         </div>
@@ -224,19 +187,19 @@
         <div class="row g-3 small">
           <div class="col-sm-4">
             <div class="border rounded-3 p-3 text-center bg-white">
-              <div class="fw-bold fs-4 text-primary mb-1">10+</div>
+              <div class="fw-bold fs-4 text-success mb-1">10+</div>
               <div class="text-muted">лет опыта</div>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="border rounded-3 p-3 text-center bg-white">
-              <div class="fw-bold fs-4 text-primary mb-1">150+</div>
+              <div class="fw-bold fs-4 text-success mb-1">150+</div>
               <div class="text-muted">построенных домов</div>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="border rounded-3 p-3 text-center bg-white">
-              <div class="fw-bold fs-4 text-primary mb-1">5 лет</div>
+              <div class="fw-bold fs-4 text-success mb-1">5 лет</div>
               <div class="text-muted">гарантии</div>
             </div>
           </div>
@@ -272,16 +235,16 @@
         </p>
         <ul class="list-unstyled mb-4">
           <li class="mb-2">
-            <strong>Телефон:</strong> <a href="tel:+79000000000" class="text-decoration-none">+7 (900) 000‑00‑00</a>
+            <strong>Телефон: </strong>
+            <a href="tel:+79515889684" class="text-decoration-none text-success">+7 (951) 588‑96‑84</a>
           </li>
           <li class="mb-2">
-            <strong>E‑mail:</strong> <a href="mailto:info@sip-house.ru" class="text-decoration-none">info@sip-house.ru</a>
-          </li>
-          <li class="mb-2">
-            <strong>Адрес офиса:</strong> г. Ваш город, ул. Примерная, д. 1
+            <strong>E‑mail: </strong>
+            <a href="mailto:sipstroy42@yandex.ru" class="text-decoration-none text-success">sipstroy42@yandex.ru</a>
           </li>
           <li>
-            <strong>Режим работы:</strong> ежедневно с 9:00 до 20:00
+            <strong>Режим работы:</strong>
+            ежедневно с 9:00 до 20:00
           </li>
         </ul>
         <div class="rounded-3 border overflow-hidden" style="height: 220px;">
@@ -326,7 +289,7 @@
                   <div class="form-text mb-2 mb-sm-0">
                     Отправляя форму, вы соглашаетесь с обработкой персональных данных.
                   </div>
-                  <button type="submit" class="btn btn-primary px-4">Отправить заявку</button>
+                  <button type="submit" class="btn btn-success px-4">Отправить заявку</button>
                 </div>
               </div>
             </form>
