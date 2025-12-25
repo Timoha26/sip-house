@@ -1,13 +1,32 @@
 <section id="projects" class="py-5">
-  <div class="container">
-    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4" *ngIf="project">
-      <div>
+  <div class="container" *ngIf="project">
+    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-4">
+      <div class="float-start">
         <h2 class="fw-bold mb-2">{{project.name}}</h2>
+        <p>{{ project.description }}</p>
+      </div>
+      <a class="btn btn-outline-success mt-3 mt-md-0 float-end" [href]="project.pdfUrl" target="_blank">Смотреть проект</a>
+    </div>
+
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-12">
+        <div>
+          <div class="fw-bold text-success">от {{ project.price | currency }}</div>
+          <small class="text-muted">{{ project.priceDescription }}</small>
+        </div>
       </div>
     </div>
 
-    <div class="row g-4" *ngIf="project">
-
+    <div class="row g-4">
+      <div class="col-lg-6" *ngFor="let image of project.images">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body d-flex flex-column">
+            <img src="{{image.url}}"/>
+            <h5 class="card-title fw-semibold">{{ image.name }}</h5>
+            <p class="card-text small mb-2 text-muted">{{ image.description }}</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

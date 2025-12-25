@@ -1,9 +1,11 @@
+import {ImageModel} from "./image.model";
+
 export interface ProjectModel {
   id: string;
   name: string;
   description: string;
   price: number;
   priceDescription: string;
-  pdfFile: string;
-  images: string[];
+  pdfUrl: string;
+  images: ImageModel[];
 }
