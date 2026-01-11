@@ -11,6 +11,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {registerLocaleData} from "@angular/common";
 import localeRu from "@angular/common/locales/ru";
 import {ProjectsDetailsComponent} from "./components/projects/projects.details.component";
+import {FormsModule} from "@angular/forms";
+import { InputMaskModule } from '@ngneat/input-mask';
 
 registerLocaleData(localeRu)
 
@@ -25,7 +27,9 @@ registerLocaleData(localeRu)
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    InputMaskModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'ru-RU'},

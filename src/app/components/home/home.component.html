@@ -257,39 +257,49 @@
         <div class="card shadow-sm border-0">
           <div class="card-body">
             <h5 class="fw-semibold mb-3">Заявка на расчёт стоимости</h5>
-            <form>
+            <form name="requestForm" #requestForm="ngForm" novalidate>
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="name" class="form-label">Ваше имя</label>
-                  <input type="text" class="form-control" id="name" placeholder="Иван">
+                  <input type="text" id="name" name="name" #name="ngModel" [(ngModel)]="request.name" placeholder="Иван"
+                         required class="form-control"
+                         [ngClass]="{'is-invalid': name.invalid && (name.touched || name.dirty)}">
                 </div>
                 <div class="col-md-6">
                   <label for="phone" class="form-label">Телефон</label>
-                  <input type="tel" class="form-control" id="phone" placeholder="+7 (___) ___‑__‑__">
+                  <input type="tel" id="phone" name="phone" #phone="ngModel" [(ngModel)]="request.phone"
+                         [inputMask]="phoneMask" placeholder="+7 (___) ___‑__‑__" required class="form-control"
+                         [ngClass]="{'is-invalid': phone.invalid && (phone.touched || phone.dirty)}">
                 </div>
                 <div class="col-md-6">
                   <label for="email" class="form-label">E‑mail</label>
-                  <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                  <input type="email" id="email" name="email" #email="ngModel" [(ngModel)]="request.email"
+                         [inputMask]="emailMask" placeholder="_@_._" class="form-control"
+                         [ngClass]="{'is-invalid': email.invalid && (email.touched || email.dirty)}">
                 </div>
                 <div class="col-md-6">
-                  <label for="projectType" class="form-label">Тип объекта</label>
-                  <select id="projectType" class="form-select">
-                    <option selected>Дом для постоянного проживания</option>
-                    <option>Дачный дом</option>
-                    <option>Гостевой дом</option>
-                    <option>Коммерческий объект</option>
+                  <label for="objectType" class="form-label">Тип объекта</label>
+                  <select id="objectType" name="objectType" #objectType="ngModel" [(ngModel)]="request.objectType"
+                          class="form-select"
+                          [ngClass]="{'is-invalid': objectType.invalid && (objectType.touched || objectType.dirty)}">
+                    <option *ngFor="let objectType of objectTypes" [ngValue]="objectType.key">{{ objectType.value }}
+                    </option>
                   </select>
                 </div>
                 <div class="col-12">
-                  <label for="message" class="form-label">Комментарий к заявке</label>
-                  <textarea class="form-control" id="message" rows="3"
-                            placeholder="Опишите участок, желаемую площадь и сроки строительства"></textarea>
+                  <label for="comment" class="form-label">Комментарий к заявке</label>
+                  <textarea id="comment" name="comment" #comment="ngModel" rows="3" [(ngModel)]="request.comment"
+                            placeholder="Опишите участок, желаемую площадь и сроки строительства" class="form-control"
+                            [ngClass]="{'is-invalid': comment.invalid && (comment.touched || comment.dirty)}"></textarea>
                 </div>
                 <div class="col-12 d-flex flex-column flex-sm-row align-items-sm-center justify-content-between mt-2">
                   <div class="form-text mb-2 mb-sm-0">
                     Отправляя форму, вы соглашаетесь с обработкой персональных данных.
                   </div>
-                  <button type="submit" class="btn btn-success px-4">Отправить заявку</button>
+                  <button type="submit" (click)="sentRequest()" [disabled]="requestForm.invalid"
+                          class="btn btn-success px-4">
+                    Отправить заявку
+                  </button>
                 </div>
               </div>
             </form>
